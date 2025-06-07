@@ -14,12 +14,8 @@ public class TestController {
     }
 
     @GetMapping("/hello-2")
-    @PreAuthorize("hasRole('client_user') or hasRole('client_admin')")
+    @PreAuthorize("hasRole('user_client_role') or hasRole('admin_client_role')")
     public String helloUser(){
         return "Hello Sprig Boot With Keycloak with USER";
     }
-
-
-    @GetMapping("/hello")
-    public String hello(){return "Hola mundo";}
 }
